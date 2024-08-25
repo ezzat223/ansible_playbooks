@@ -1,0 +1,10 @@
+- name: Enable a service on firewall
+  firewalld:
+    port: 80/tcp
+    permanent: true
+    state: enabled
+
+- name: Reload the firewalld
+  service:
+    name: firewalld 
+    state: reloaded  # state triggers the service to reload its configuration without stopping or restarting the service.

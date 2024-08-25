@@ -1,0 +1,7 @@
+- name: Download a file
+  get_url:
+    url: https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tar.xz
+    dest: /tmp/script/
+    owner: root
+    group: root
+    mode: '0777'

@@ -1,0 +1,17 @@
+- name: Add cron job (ansible pull)
+  cron:
+    user: ansible
+    name: "ansible provision"
+    minute: "*/10"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/ezzat223/ansible_pull.git > /dev/null"
+    # disabled: yes # used to disable that cron job (like deleting it)
+
+
+- name: Add cron job
+  cron:
+    name: PATH
+    env: yes            # tells Ansible to include the environment variables of the user under which the cron job is running.
+    user: shehab
+    job: /tmp/script
+    # insertafter: PATH
+    # insertbefore: PATH

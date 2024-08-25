@@ -1,0 +1,9 @@
+- name: Copy default HTML file for site
+  tags: apache,apache2,httpd
+  copy: 
+    src: default_site.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+    backup: true # makes same file in same dir but hidden with a .bak extension 

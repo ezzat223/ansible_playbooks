@@ -1,0 +1,20 @@
+---
+
+- name: Playbook name
+  hosts: all
+  vars:
+    - app: nginx
+    - apps: [yum,httpd,vim,telnet]
+  tasks:
+
+  - name: Instal using one var
+    package:
+      name: "{{ app }}"
+      state: present
+
+
+  - name: Install using a list of items
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ apps }}"

@@ -1,0 +1,15 @@
+- name: Install latest apache and PHP on web_servers
+  tags: apache,apache2,httpd,php
+  package:
+    name:
+      - "{{ apache_package }}"
+      - "{{ php_package }}"
+    state: latest
+
+
+- name: Remove apache2 and PHP support package
+    package:
+      name: 
+        - apache2
+        - ibapache2-mod-php
+      state: absent

@@ -1,0 +1,5 @@
+- name: Run a script
+  shell: ./test.sh >> test.log  # a shell file called test.sh
+  args:
+    chdir: /tmp/script/ # cd to the dir of the shell script 
+    creates: test.log   # create the file test.log

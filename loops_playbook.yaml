@@ -1,0 +1,9 @@
+- name: User creation
+  user: 
+    name: "{{ item }}"
+    comment: Adding new users for the QA team
+    shell: /bin/bash
+  loop:
+    - Shehab
+    - Simone
+    - Jay
